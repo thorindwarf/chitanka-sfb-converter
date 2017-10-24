@@ -26,8 +26,10 @@ $testOutput = rtrim($testOutput, "\n");
 // save output if wanted
 $outDir = dirname($file) . '/output';
 
-if (file_exists($outDir)) {
-	file_put_contents($outDir .'/'. basename($file, '.sfb') . '.fb2', $testOutput);
+if (!file_exists($outDir)) {
+    mkdir($outDir, 0777, true);
 }
+
+file_put_contents($outDir .'/'. basename($file, '.sfb') . '.fb2', $testOutput);
 
 echo 'converted, go to <strong>/output/&lt;your-file-name&gt;.fb2</strong>';
