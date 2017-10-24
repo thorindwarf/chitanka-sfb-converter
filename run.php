@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 require __DIR__ . '/vendor/autoload.php';
 
-$file = 'dijon.sfb';
+$file = 'Uiljam_Golding_-_Poveliteljat_na_muhite_-1394-b.sfb';
 $conv = new Sfblib\SfbToFb2Converter($file, dirname($file));
 
 $conv->setObjectCount(1);
